@@ -1,5 +1,7 @@
+import { initialCards } from './cards.js';
+
 const content = document.querySelector('.content');
-const placesContainer = document.querySelector('.places__list');
+const placesContainer = content.querySelector('.places__list');
 
 function createCard(cardData, deleteCard) {
   const cardTemplate = document.querySelector('#card-template').content;
@@ -22,5 +24,3 @@ function deleteCard(evt) {
 initialCards.forEach(function(cardData) {
   placesContainer.append(createCard(cardData, deleteCard));
 });
-
-
