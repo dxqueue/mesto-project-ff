@@ -1,3 +1,4 @@
+import '../pages/index.css';
 import { initialCards } from './cards.js';
 
 const content = document.querySelector('.content');
