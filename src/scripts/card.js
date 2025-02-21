@@ -1,16 +1,21 @@
 function createCard(cardData, deleteCard, likeCard, openCard) {
   const cardTemplate = document.querySelector('#card-template').content;
   const cardElement = cardTemplate.querySelector('.places__item').cloneNode(true);
-  const likeButton = cardElement.querySelector('.card__like-button');
+  const cardLikeButton = cardElement.querySelector('.card__like-button');
+  const cardImage = cardElement.querySelector('.card__image');
+  const cardTitle = cardElement.querySelector('.card__title');
+  const cardDeleteButton = cardElement.querySelector('.card__delete-button');
 
-  cardElement.querySelector('.card__image').src = cardData.link;
-  cardElement.querySelector('.card__image').alt = cardData.name;
-  cardElement.querySelector('.card__title').textContent = cardData.name;
-  cardElement.querySelector('.card__delete-button').addEventListener('click', deleteCard);
-  likeButton.addEventListener('click', function(event) {
-    likeCard(likeButton);
+  cardImage.src = cardData.link;
+  cardImage.alt = `Фотография места: ${cardData.name}`;
+  cardTitle.textContent = cardData.name;
+  cardDeleteButton.addEventListener('click', () => {
+    deleteCard(cardElement);
   });
-  cardElement.querySelector('.card__image').addEventListener('click', function(){
+  cardLikeButton.addEventListener('click', () => {
+    likeCard(cardLikeButton);
+  });
+  cardImage.addEventListener('click', () => {
     openCard(cardData);
   });
 
@@ -21,10 +26,7 @@ function likeCard(event) {
   event.classList.toggle('card__like-button_is-active');
 };
 
-
-function deleteCard(event) {
-  const card = event.target.closest('.places__item');
-
+function deleteCard(card) {
   card.remove();
 };
 
