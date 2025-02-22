@@ -60,6 +60,7 @@ initialCards.forEach(function(cardData) {
 
 popups.forEach(function(popup) {
   const closeBtn = popup.querySelector('.popup__close');
+  popup.classList.add('popup_is-animated');
   closeBtn.addEventListener('click', function(event) {
     closeModal(popup);
   });
