@@ -2,7 +2,7 @@ import {likeCards, dislikeCards} from './api.js';
 // Функция создания карточки
 function createCard(cardData, openDeletePopup, openCard, likeCard, userId) {
    
-  const cardTemplate = document.querySelector('#card-template').content;
+ const cardTemplate = document.querySelector('#card-template').content;
   const cardElement = cardTemplate.querySelector('.places__item').cloneNode(true);
   const cardLikeButton = cardElement.querySelector('.card__like-button');
   const cardLikeCounter = cardElement.querySelector('.card__like-counter');
