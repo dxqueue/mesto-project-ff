@@ -13,5 +13,5 @@
 
 Разработчик: https://github.com/dxqueue
 
-Сайт: https://github.com/dxqueue/mesto-project-ff
+Сайт: https://dxqueue.github.io/mesto-project-ff
 
